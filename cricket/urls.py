@@ -1,23 +1,15 @@
-"""cricket URL Configuration
+from django.urls import path
+from .views import get_first_cric,get_capkeep,post_fav,get_cap,get_dat,get_btw,get_right,get_fav
+ #from .views import get_capkeep
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/2.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
-from django.contrib import admin
-from django.urls import path, include
-from cricketapp import urls as urls2
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/',include(urls2)),
+urlpatterns=[
+    path('cricket/',get_first_cric),
+    path('capwi/',get_capkeep),
+    path('cap/',get_cap),
+    path('fav/',post_fav),
+    path('data/',get_dat),
+    path('btw/',get_btw),
+    path('right/',get_right),
+    path('favv/',get_fav),
+    #path('ho/',api_add_article)
 ]
